@@ -1,3 +1,4 @@
+import com.github.gradle.node.npm.task.NpxTask
 import org.jetbrains.compose.compose
 import org.jetbrains.compose.desktop.application.dsl.TargetFormat
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
@@ -5,6 +6,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 plugins {
     kotlin("multiplatform")
     id("org.jetbrains.compose")
+    id("com.github.node-gradle.node") version "3.5.1"
 }
 
 group = "com.example"
@@ -43,3 +45,24 @@ compose.desktop {
         }
     }
 }
+
+abstract class CommitlintTask : NpxTask() {
+    @Input
+    @Option(option="from", description="Lower end of the commit range.")
+    var from = "HEAD~1"
+
+    @Input
+    @Option(option="to", description="Upper end of the commit range.")
+    var to = "HEAD"
+
+    init {
+        command.set("@commitlint/cli")
+        args.set(listOf("--from", from, "--to", to))
+    }
+    @TaskAction
+    fun run() {
+        super.exec()
+    }
+}
+
+tasks.register<CommitlintTask>("commitlint")

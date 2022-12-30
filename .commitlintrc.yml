@@ -1,0 +1,68 @@
+# Commitlint configuration.
+# See: https://github.com/conventional-changelog/commitlint/blob/master/docs/reference-rules.md
+---
+rules:
+  body-leading-blank:
+    - 2
+    - always
+  body-max-line-length:
+    - 2
+    - always
+    - 72
+  footer-leading-blank:
+    - 2
+    - always
+  header-max-length:
+    - 2
+    - always
+    - 72
+  scope-enum:
+    - 2
+    - always
+    - - ci
+      - build
+      - ui
+      - backend
+      - style
+  scope-case:
+    - 2
+    - always
+    - lower-case
+  subject-case:
+    - 2
+    - always
+    - - sentence-case
+      - start-case
+      - pascal-case
+      - upper-case
+  subject-empty:
+    - 2
+    - never
+  subject-full-stop:
+    - 2
+    - never
+    - .
+  type-case:
+    - 2
+    - always
+    - kebab-case
+  type-empty:
+    - 2
+    - never
+  type-enum:
+    - 2
+    - always
+    - - feat
+      - fix
+      - chore
+      - refactor
+      - test
+      - docs
+      - style
+      - perf
+      - ci
+      - build
+      - revert
+  signed-off-by:
+    - 2
+    - always

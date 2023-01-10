@@ -78,7 +78,7 @@ jreleaser {
             )
         )
     }
-//    configFile.set(file(""))
+
     project {
         description.set("JReleaser test project.")
         license.set("Apache-2.0")
@@ -109,6 +109,10 @@ jreleaser {
                 links.set(true)
                 formatted.set(Active.ALWAYS)
                 preset.set("conventional-commits")
+
+                contributors {
+                    format.set("- {{contributorName}}{{#contributorUsernameAsLink}} ({{.}}){{/contributorUsernameAsLink}}")
+                }
 
                 append {
                     enabled.set(true)

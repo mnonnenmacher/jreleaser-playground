@@ -1,6 +1,25 @@
 # Changelog
 
 <!-- JRELEASER_CHANGELOG_APPEND - Do not remove or modify this section -->
+## [v1.1.0]
+
+## Changelog
+
+## 🚀 Features
+- [12f522c](https://github.com/mnonnenmacher/jreleaser-playground/commits/12f522c) 🚨 Some breaking change - *Just for fun.*
+
+## 🐛 Fixes
+- [f667469](https://github.com/mnonnenmacher/jreleaser-playground/commits/f667469) **ui**: Fix some issue, closes [#4](https://github.com/mnonnenmacher/jreleaser-playground/issues/4)
+
+---
+- [13d0231](https://github.com/mnonnenmacher/jreleaser-playground/commits/13d0231) Release 1.1.0
+
+
+## Contributors
+We'd like to thank the following people for their contributions:
+- Martin Nonnenmacher
+
+
 ## [v1.0.0]
 
 ## Changelog

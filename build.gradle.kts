@@ -12,7 +12,7 @@ plugins {
 }
 
 group = "com.example"
-version = "1.0.0"
+version = file("VERSION").readText().trim()
 
 repositories {
     google()

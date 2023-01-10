@@ -43,7 +43,7 @@ compose.desktop {
         nativeDistributions {
             targetFormats(TargetFormat.Dmg, TargetFormat.Msi, TargetFormat.Deb)
             packageName = "jreleaser-playground"
-            packageVersion = "1.0.0"
+            packageVersion = project.version.toString()
         }
     }
 }
@@ -113,6 +113,13 @@ jreleaser {
                 append {
                     enabled.set(true)
                 }
+
+                hide {
+                    category("tasks")
+                    category("build")
+                    category("changes")
+                    category("docs")
+                }
             }
         }
     }
@@ -120,9 +127,9 @@ jreleaser {
     distributions {
         register("app") {
             artifact {
-                path.set(file("{{binariesDir}}/msi/jreleaser-playground-1.0.0.deb"))
-                path.set(file("{{binariesDir}}/msi/jreleaser-playground-1.0.0.dmg"))
-                path.set(file("{{binariesDir}}/msi/jreleaser-playground-1.0.0.msi"))
+                path.set(file("{{binariesDir}}/msi/jreleaser-playground-{{projectVersion}}.deb"))
+                path.set(file("{{binariesDir}}/msi/jreleaser-playground-{{projectVersion}}.dmg"))
+                path.set(file("{{binariesDir}}/msi/jreleaser-playground-{{projectVersion}}.msi"))
             }
         }
     }

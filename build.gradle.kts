@@ -43,7 +43,7 @@ compose.desktop {
         nativeDistributions {
             targetFormats(TargetFormat.Dmg, TargetFormat.Msi, TargetFormat.Deb)
             packageName = "jreleaser-playground"
-            packageVersion = project.version.toString()
+            packageVersion = project.version.toString().removeSuffix("-SNAPSHOT")
         }
     }
 }

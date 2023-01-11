@@ -132,7 +132,13 @@ jreleaser {
         register("app") {
             artifact {
                 path.set(file("{{binariesDir}}/deb/jreleaser-playground-{{projectVersion}}.deb"))
+            }
+
+            artifact {
                 path.set(file("{{binariesDir}}/dmg/jreleaser-playground-{{projectVersion}}.dmg"))
+            }
+
+            artifact {
                 path.set(file("{{binariesDir}}/msi/jreleaser-playground-{{projectVersion}}.msi"))
             }
         }

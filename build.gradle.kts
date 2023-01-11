@@ -131,7 +131,7 @@ jreleaser {
     distributions {
         register("app") {
             artifact {
-                path.set(file("{{binariesDir}}/deb/jreleaser-playground-{{projectVersion}}.deb"))
+                path.set(file("{{binariesDir}}/deb/jreleaser-playground_{{projectVersion}}-1_amd64.deb"))
             }
 
             artifact {

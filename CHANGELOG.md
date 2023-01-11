@@ -1,6 +1,16 @@
 # Changelog
 
 <!-- JRELEASER_CHANGELOG_APPEND - Do not remove or modify this section -->
+## [v1.2.0]
+
+## Changelog
+
+
+## Contributors
+We'd like to thank the following people for their contributions:
+- Martin Nonnenmacher
+
+
 ## [v1.1.0]
 
 ## Changelog

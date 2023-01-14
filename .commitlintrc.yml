@@ -16,14 +16,6 @@ rules:
     - 2
     - always
     - 72
-  scope-enum:
-    - 2
-    - always
-    - - ci
-      - build
-      - ui
-      - backend
-      - style
   scope-case:
     - 2
     - always
@@ -63,6 +55,7 @@ rules:
       - ci
       - build
       - revert
+      - release
   signed-off-by:
     - 2
     - always

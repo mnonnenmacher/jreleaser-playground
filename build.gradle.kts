@@ -110,6 +110,14 @@ jreleaser {
                 formatted.set(Active.ALWAYS)
                 preset.set("conventional-commits")
 
+                labeler {
+                    label.set("release")
+                    title.set("regex:^(?:release(?:\\(.*\\))?!?):\\s.*")
+                    order.set(120)
+                }
+
+                excludeLabel("release")
+
                 contributors {
                     format.set("- {{contributorName}}{{#contributorUsernameAsLink}} ({{.}}){{/contributorUsernameAsLink}}")
                 }

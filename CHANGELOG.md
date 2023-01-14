@@ -1,6 +1,20 @@
 # Changelog
 
 <!-- JRELEASER_CHANGELOG_APPEND - Do not remove or modify this section -->
+## [v1.3.1]
+
+## Changelog
+
+## 🛠  Build
+- [cbc273a](https://github.com/mnonnenmacher/jreleaser-playground/commits/cbc273a) Use default token for release
+
+
+## Contributors
+We'd like to thank the following people for their contributions:
+- GitHub Action ([@github-actions[bot]](https://github.com/apps/github-actions))
+- Martin Nonnenmacher
+
+
 ## [v1.3.0]
 
 ## Changelog

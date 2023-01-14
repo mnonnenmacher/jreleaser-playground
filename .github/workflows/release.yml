@@ -13,8 +13,8 @@ on:
         type: string
 
 jobs:
-  release:
-    name: Release
+  prepare:
+    name: Prepare Release
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -29,7 +29,7 @@ jobs:
           java-version: 17
           distribution: temurin
 
-      - name: Set release version
+      - name: Create release branch
         env:
           JRELEASER_GITHUB_TOKEN: ${{ secrets.JRELEASER_GITHUB_TOKEN }}
         run: |
@@ -41,12 +41,61 @@ jobs:
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config --global user.name "GitHub Action"
           git commit -a -m "Releasing version $VERSION"
-          git push origin ${{ inputs.branch }}
+          git push origin ${{ inputs.branch }}:release-${{ inputs.version }}
 
-      - name: Assemble
+  assemble:
+    name: Assemble ${{ matrix.os }}
+    needs: prepare
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ ubuntu-latest, macos-latest, windows-latest ]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          ref: release-${{ inputs.version }}
+          fetch-depth: 0
+
+      - name: Set up Java
+        uses: actions/setup-java@v3
+        with:
+          java-version: 17
+          distribution: temurin
+
+      - name: Build distribution
         run: |
-          ./gradlew packageDeb
-          find build/compose/binaries/main
+          ./gradlew package
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: ${{ matrix.os }}-release-artifact
+          path: |
+            build/compose/binaries/main/deb/jreleaser-playground_${{ inputs.version }}-1_amd64.deb
+            build/compose/binaries/main/dmg/jreleaser-playground-${{ inputs.version }}.dmg
+            build/compose/binaries/main/msi/jreleaser-playground-${{ inputs.version }}.msi
+
+  release:
+    name: Release
+    needs: [ prepare, assemble ]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          ref: release-${{ inputs.version }}
+          fetch-depth: 0
+
+      - name: Download artifacts
+        uses: actions/download-artifact@v3
+
+      - name: Set up Java
+        uses: actions/setup-java@v3
+        with:
+          java-version: 17
+          distribution: temurin
 
       - name: Release
         env:

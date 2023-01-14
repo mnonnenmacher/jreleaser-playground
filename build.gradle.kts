@@ -134,13 +134,13 @@ jreleaser {
                 path.set(file("{{binariesDir}}/deb/jreleaser-playground_{{projectVersion}}-1_amd64.deb"))
             }
 
-//            artifact {
-//                path.set(file("{{binariesDir}}/dmg/jreleaser-playground-{{projectVersion}}.dmg"))
-//            }
-//
-//            artifact {
-//                path.set(file("{{binariesDir}}/msi/jreleaser-playground-{{projectVersion}}.msi"))
-//            }
+            artifact {
+                path.set(file("{{binariesDir}}/dmg/jreleaser-playground-{{projectVersion}}.dmg"))
+            }
+
+            artifact {
+                path.set(file("{{binariesDir}}/msi/jreleaser-playground-{{projectVersion}}.msi"))
+            }
         }
     }
 }

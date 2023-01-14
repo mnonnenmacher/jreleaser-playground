@@ -116,7 +116,17 @@ jreleaser {
                     order.set(120)
                 }
 
-                excludeLabel("release")
+                category {
+                    title.set("Hidden")
+                    key.set("hidden")
+                    order.set(120)
+                    labels.set(listOf("release"))
+                }
+
+                hide {
+                    category("hidden")
+                    contributor("GitHub Action")
+                }
 
                 contributors {
                     format.set("- {{contributorName}}{{#contributorUsernameAsLink}} ({{.}}){{/contributorUsernameAsLink}}")

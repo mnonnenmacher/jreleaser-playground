@@ -1,6 +1,19 @@
 # Changelog
 
 <!-- JRELEASER_CHANGELOG_APPEND - Do not remove or modify this section -->
+## [v1.4.0]
+
+## Changelog
+
+## 🧰 Tasks
+- [1bb29d2](https://github.com/mnonnenmacher/jreleaser-playground/commits/1bb29d2) Hide release commit in changelog
+
+
+## Contributors
+We'd like to thank the following people for their contributions:
+- Martin Nonnenmacher
+
+
 ## [v1.3.1]
 
 ## Changelog

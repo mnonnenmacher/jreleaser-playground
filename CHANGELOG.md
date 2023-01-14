@@ -1,6 +1,20 @@
 # Changelog
 
 <!-- JRELEASER_CHANGELOG_APPEND - Do not remove or modify this section -->
+## [v1.3.0]
+
+## Changelog
+
+## 🧰 Tasks
+- [1bc5791](https://github.com/mnonnenmacher/jreleaser-playground/commits/1bc5791) Show all categories in changelog
+- [e8bb88b](https://github.com/mnonnenmacher/jreleaser-playground/commits/e8bb88b) Use matrix build for release
+
+
+## Contributors
+We'd like to thank the following people for their contributions:
+- Martin Nonnenmacher
+
+
 ## [v1.2.0]
 
 ## Changelog

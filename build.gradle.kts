@@ -117,13 +117,6 @@ jreleaser {
                 append {
                     enabled.set(true)
                 }
-
-                hide {
-                    category("tasks")
-                    category("build")
-                    category("changes")
-                    category("docs")
-                }
             }
         }
     }

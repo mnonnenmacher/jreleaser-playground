@@ -1,6 +1,19 @@
 # Changelog
 
 <!-- JRELEASER_CHANGELOG_APPEND - Do not remove or modify this section -->
+## [v1.4.2]
+
+## Changelog (2023-01-15)
+
+### 🧰 Tasks
+- [0538cb1](https://github.com/mnonnenmacher/jreleaser-playground/commits/0538cb1) Configure signing with cosign
+
+
+### Contributors
+We'd like to thank the following people for their contributions:
+- Martin Nonnenmacher
+
+
 ## [v1.4.1]
 
 ## Changelog (2023-01-15)

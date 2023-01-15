@@ -2,6 +2,7 @@ import com.github.gradle.node.npm.task.NpxTask
 import org.jetbrains.compose.compose
 import org.jetbrains.compose.desktop.application.dsl.TargetFormat
 import org.jreleaser.model.Active
+import org.jreleaser.model.Signing
 import org.jreleaser.model.api.common.Apply
 
 plugins {
@@ -140,6 +141,16 @@ jreleaser {
                 contributorsTitleFormat.set("### Contributors")
                 contentTemplate.set(file(".jreleaser/changelog.tpl"))
             }
+        }
+    }
+
+    signing {
+        active.set(Active.ALWAYS)
+        armored.set(true)
+        mode.set(Signing.Mode.COSIGN)
+
+        cosign {
+            version.set("1.13.1")
         }
     }
 

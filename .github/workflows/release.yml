@@ -115,6 +115,9 @@ jobs:
       - name: Release
         env:
           JRELEASER_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          JRELEASER_COSIGN_PASSWORD: ${{ secrets.COSIGN_PASSWORD }}
+          JRELEASER_COSIGN_PRIVATE_KEY: ${{ secrets.COSIGN_PRIVATE_KEY }}
+          JRELEASER_COSIGN_PUBLIC_KEY: ${{ secrets.COSIGN_PUBLIC_KEY }}
         run: |
           ./gradlew jreleaserFullRelease
 

@@ -135,6 +135,10 @@ jreleaser {
                 append {
                     enabled.set(true)
                 }
+
+                categoryTitleFormat.set("### {{categoryTitle}}")
+                contributorsTitleFormat.set("### Contributors")
+                contentTemplate.set(file(".jreleaser/changelog.tpl"))
             }
         }
     }
